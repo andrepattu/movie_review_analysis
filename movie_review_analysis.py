@@ -3,7 +3,6 @@ from nltk.corpus import movie_reviews
 import random
 import re
 from nltk.classify.scikitlearn import SklearnClassifier
-from sklearn.naive_bayes import BernoulliNB
 
 # Store data into a dictionary of documents
 documents = [(list(movie_reviews.words(fileid)), category)
@@ -35,9 +34,5 @@ train_set, test_set = feature_sets[200:], feature_sets[:200]
 classifier = nltk.NaiveBayesClassifier.train(train_set)
 
 # Show classifier accuracy and 10 most informative features
-print(nltk.classify.accuracy(classifier, test_set))
+print('The Naive Bayes classifier accuracy is', nltk.classify.accuracy(classifier, test_set))
 classifier.show_most_informative_features(10)
-
-# Train using Bernoulli classifier
-classifier = SklearnClassifier(BernoulliNB()).train(train_set)
-print(nltk.classify.accuracy(classifier, test_set))
