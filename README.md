@@ -1,6 +1,6 @@
 # movie_review_analysis
 
-simple movie review analysis using Naive Bayes and Bernoulli classifier
+simple movie review analysis using Naive Bayes classifier
 
 References: \
 Data set taken from NLTK corpus: https://www.nltk.org/nltk_data/ \
